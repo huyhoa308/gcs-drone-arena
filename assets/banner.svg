@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1026"/>
+      <stop offset="0.6" stop-color="#1b2a5c"/>
+      <stop offset="1" stop-color="#3a3f8f"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ef0ff"/>
+      <stop offset="0.5" stop-color="#ffe066"/>
+      <stop offset="1" stop-color="#ff7ad9"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0;-1 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5ef0ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5ef0ff" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .star { fill:#fff; animation: tw 3s ease-in-out infinite; }
+      .s2 { animation-delay: 1s; } .s3 { animation-delay: 2s; }
+      @keyframes tw { 0%,100% { opacity:.2 } 50% { opacity:1 } }
+      .hills1 { animation: pan 18s linear infinite; }
+      .hills2 { animation: pan 10s linear infinite; }
+      @keyframes pan { from { transform: translateX(0) } to { transform: translateX(-900px) } }
+      .drone { animation: hover 2.4s ease-in-out infinite; transform-origin: 450px 120px; }
+      @keyframes hover { 0%,100% { transform: translate(0,0) rotate(-2deg) } 50% { transform: translate(0,-12px) rotate(2deg) } }
+      .prop { animation: spin .18s linear infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes spin { from { transform: scaleX(1) } 50% { transform: scaleX(.15) } to { transform: scaleX(1) } }
+      .box { animation: sway 2.4s ease-in-out infinite; transform-origin: 450px 140px; }
+      @keyframes sway { 0%,100% { transform: rotate(4deg) } 50% { transform: rotate(-4deg) } }
+      .led { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity:.15 } }
+      .sub { fill:#c9d4ff; font-size:17px; letter-spacing:3px; }
+    </style>
+  </defs>
+
+  <rect width="900" height="300" fill="url(#sky)"/>
+
+  <g>
+    <circle class="star" cx="60" cy="40" r="1.6"/><circle class="star s2" cx="160" cy="80" r="1.2"/>
+    <circle class="star s3" cx="250" cy="30" r="1.8"/><circle class="star" cx="350" cy="60" r="1.1"/>
+    <circle class="star s2" cx="620" cy="35" r="1.5"/><circle class="star s3" cx="720" cy="75" r="1.2"/>
+    <circle class="star" cx="820" cy="45" r="1.7"/><circle class="star s3" cx="540" cy="20" r="1.1"/>
+  </g>
+
+  <g class="hills1" fill="#24306b">
+    <path d="M0 240 Q120 180 240 230 T480 220 T720 225 T900 230 L900 300 L0 300Z"/>
+    <path transform="translate(900 0)" d="M0 240 Q120 180 240 230 T480 220 T720 225 T900 230 L900 300 L0 300Z"/>
+  </g>
+  <g class="hills2" fill="#1d6b52">
+    <path d="M0 270 Q150 235 300 262 T600 258 T900 266 L900 300 L0 300Z"/>
+    <circle cx="110" cy="252" r="14"/><circle cx="420" cy="250" r="12"/><circle cx="760" cy="254" r="15"/>
+    <g transform="translate(900 0)">
+      <path d="M0 270 Q150 235 300 262 T600 258 T900 266 L900 300 L0 300Z"/>
+      <circle cx="110" cy="252" r="14"/><circle cx="420" cy="250" r="12"/><circle cx="760" cy="254" r="15"/>
+    </g>
+  </g>
+
+  <!-- tiêu đề -->
+  <text x="450" y="62" text-anchor="middle" font-size="46" font-weight="800" fill="url(#title)" letter-spacing="4">GCS DRONE ARENA</text>
+  <text x="450" y="92" text-anchor="middle" class="sub">BAY · GẮP · GIAO HÀNG</text>
+
+  <!-- drone -->
+  <g class="drone">
+    <ellipse cx="450" cy="150" rx="90" ry="40" fill="url(#glow)"/>
+    <g class="box">
+      <line x1="450" y1="140" x2="450" y2="178" stroke="#9aa6d8" stroke-width="2" stroke-dasharray="3 3"/>
+      <rect x="434" y="178" width="32" height="26" rx="3" fill="#d9a35b" stroke="#8a5a20" stroke-width="2"/>
+      <line x1="434" y1="191" x2="466" y2="191" stroke="#8a5a20" stroke-width="2"/>
+    </g>
+    <line x1="395" y1="124" x2="505" y2="124" stroke="#2a2f45" stroke-width="7" stroke-linecap="round"/>
+    <line x1="405" y1="116" x2="405" y2="124" stroke="#2a2f45" stroke-width="4"/>
+    <line x1="495" y1="116" x2="495" y2="124" stroke="#2a2f45" stroke-width="4"/>
+    <rect x="425" y="116" width="50" height="22" rx="8" fill="#eef2ff" stroke="#2a2f45" stroke-width="3"/>
+    <circle cx="450" cy="127" r="5" fill="#5ef0ff"/>
+    <circle class="led" cx="432" cy="127" r="2.5" fill="#ff4d6d"/>
+    <circle class="led" cx="468" cy="127" r="2.5" fill="#4dff88" style="animation-delay:.5s"/>
+    <ellipse class="prop" cx="405" cy="113" rx="26" ry="3.5" fill="#5ef0ff" opacity=".8"/>
+    <ellipse class="prop" cx="495" cy="113" rx="26" ry="3.5" fill="#5ef0ff" opacity=".8" style="animation-delay:.09s"/>
+  </g>
+</svg>
